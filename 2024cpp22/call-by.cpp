@@ -10,5 +10,6 @@ int main() {
 	//num의 값은 바뀐다
 	call_by_pointer(&num);
 	cout << num;
+	
 	return 0;
 }	

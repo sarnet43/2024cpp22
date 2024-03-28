@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="배열과포인터.cpp">
+    <ClCompile Include="배열과포인터그리고함수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

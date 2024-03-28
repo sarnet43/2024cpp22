@@ -18,6 +18,9 @@ int main() {
 	printf("%d %d %d\n",pi,pc,pd);
 	printf("%d %d %d\n", pi+1, pc+1, pd+1);
 	
-
+	pi = arr; //주소
+	printf("%d %d\n", pi + 1, arr + 1);
+	printf("%d %d\n", *(pi + 1), *(arr + 1));
+	printf("%d %d\n", pi[1], arr[1]);
 	return 0;
 }	

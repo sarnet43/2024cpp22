@@ -1,13 +1,14 @@
-﻿#include <stdio.h>
-#include <string.h>
+﻿#include <iostream>
+#include <string>
 int main(void) {
-	char str[30] = "develop hungry";
-	char str2[30];
+	std::string str = "develop hungry";
+	std::string str2;
 	int i = 0;
 	//str에 있는 내용을 str2에 복사.
-	//'\0'을 만날때까지
-	strcpy(str2, str); //보안 취약
+	str2 = str;
+	
+	std::cout << str;
 
-	printf("%s", str2);
+
 
 }

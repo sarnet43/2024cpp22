@@ -1,14 +1,15 @@
 ﻿#include <iostream>
 #include <string>
 using namespace std;
-class Student {
+struct Student {
+
 	int hakbun_;
 	string name_;
 
  };
 int main(void) {
 	Student jisu;
-	//클래스는 default가 private이다. 
+	//구조체는 default가 pubic이다. 
 	jisu.hakbun_ = 2202;
 	jisu.name_ = "나지수";
 

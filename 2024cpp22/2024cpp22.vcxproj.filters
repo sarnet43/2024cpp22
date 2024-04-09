@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="02-04 string문자추가.cpp">
+    <ClCompile Include="02-05 string문자열비교.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

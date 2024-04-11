@@ -30,7 +30,7 @@ int main(void) {
 
 	//정적할당 : 메모리는 stack할당 , 컴파일시 메모리 크기가 정해짐
 	Student mirim = Student();
-	(*jisu).show();
+	jisu->show();
 	mirim.show();
 
 	//동적할당 해제

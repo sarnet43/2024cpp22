@@ -13,6 +13,12 @@ public:
 		hakbun_ = hakbun;
 		name_ = name;
 	}
+	//클래스의 멤버를 출력, 함수이름 : show
+	void show(void) {
+		cout << hakbun_<< " ";
+		cout << name_ << endl;
+
+}
 private:
 	int hakbun_;
 	string name_;
@@ -21,6 +27,8 @@ private:
 int main(void) {
 	Student jisu = Student(2202, "나지수");
 	Student mirim = Student();
+	jisu.show();
+	mirim.show();
 
 	return 0;
 

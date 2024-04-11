@@ -8,13 +8,12 @@ public:
 	Student() {
 		//this : 자기 자신을 가리키는 포인터
 		//멤버를 명확하게 가리킬 수 있다.
-
 		this->hakbun_ = 2222;
 		name_ = "이미림";
 	}
-	Student(int hakbun, string name) {
-		hakbun_ = hakbun;
-		name_ = name;
+	//멤버변수 초기화 : const/참조 멤버변수를 초기화 할 수 있다.
+	Student(int hakbun, string name) : hakbun_(hakbun), name_(name)
+	{
 	}
 	//클래스의 멤버를 출력, 함수이름 : show
 	void show(void) {

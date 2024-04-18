@@ -3,7 +3,6 @@
 using namespace std;
 class Student {
 public: 
-	//TODO : 생성자에서 동적할당을 한 메모리 공간을 지울 수 없다. 
 	Student(int hakbun, const char* name) : hakbun_(hakbun)
 	{
 		
@@ -13,7 +12,10 @@ public:
 		
 		strcpy(name_, name);
 	}
-	
+	//소멸자 : 객체가 소멸할 때 (메모리에서 지워질 때) 호출되는 함수
+	~Student(void) {
+		delete []name_;
+	}
 	void show(void) {
 		cout << hakbun_<< " ";
 		cout << name_ << endl;

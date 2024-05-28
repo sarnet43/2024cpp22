@@ -29,7 +29,7 @@ public:
 	void show(void) {
 		cout << hakbun_<< " ";
 		cout << name_ << endl;
-
+		 
 }
 private:
 	int hakbun_;
@@ -41,7 +41,7 @@ int main(void) {
 	//복사생성자
 	Student stu2 = Student(stu); 
 
-
+	
 	return 0;
 
 }

@@ -39,7 +39,7 @@ private:
 int main(void) {
 	Student* stu = new Student("sua", 18, 2209);
 	stu->show_person();
-
+	
 	delete stu;
 	return 0;
 }

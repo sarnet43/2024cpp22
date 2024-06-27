@@ -69,6 +69,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(800, 600), "bricks");
     window.setFramerateLimit(60);   // 초당 프레임을 60으로
 
+    Ball ball(800 / 2.f, 300.f);
     Paddle paddle(600.f, 550.f);
 
     // 이벤트 루프 시작
@@ -84,6 +85,7 @@ int main()
 
         // update
         paddle.update();
+        ball.update();
 
         // draw
         // 화면 지우기
@@ -91,6 +93,7 @@ int main()
 
         // 그리기
         window.draw(paddle.shape);
+        window.draw(ball.shape);
 
         // 화면 업데이트
         window.display();

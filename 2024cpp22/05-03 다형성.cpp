@@ -13,6 +13,9 @@ public:
 	void eat(void) {
 		cout << "먹다" << endl;
 	}
+	Animal(string name, unsigned int age, int leg_num)
+		: name_(name), age_(age), leg_num_(leg_num) {}
+
 private:
 	string name_;
 	unsigned int age_;
@@ -21,7 +24,7 @@ private:
 };
 
 void main(void) {
-	Animal *animal = new Animal();
+	Animal *animal = new Animal("요아조비", 8, 2);
 	animal->bark();
 	animal->walk();
 	animal->eat();

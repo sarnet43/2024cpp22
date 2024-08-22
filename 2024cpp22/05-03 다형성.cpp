@@ -4,13 +4,13 @@ using namespace std;
 
 class Animal {
 public:
-	void walk(void) {
+	virtual void walk(void) {
 		cout << "걷다" << endl;
 	}
-	void bark(void) {
+	virtual void bark(void) {
 		cout << "짖다" << endl;
 	}
-	void eat(void) {
+	virtual void eat(void) {
 		cout << "먹다" << endl;
 	}
 	Animal(string name, unsigned int age, int leg_num)
@@ -33,16 +33,10 @@ public:
 		:Animal(name, age, leg_num),loyalty_ (loyalty) {
 		cout << "충성도 " << endl;
 	}
-	//cpp은 디폴트가 정적바인딩이기 때문에 가상함수로 오버라이딩 해야한다
-	void bark() {
-		cout << "울프울프" << endl;
-	}
-	void eat() {
-		cout << "왕" << endl;
-	}
-	void walk() {
-		cout << "촵촵촵촵" << endl;
-	}
+	
+	void bark() override { cout << "울프울프" << endl; }
+	void eat() override { cout << "왕" << endl; }
+	void walk() override { cout << "촵촵촵촵" << endl; }
 private:
 	int loyalty_;
 };

@@ -20,7 +20,7 @@ public:
 		cout << "다리 갯수 " << leg_num << endl;
 
 	}
-	~Animal() {
+	virtual ~Animal() {
 		cout << "Animal 소멸자" << endl;
 	}
 
@@ -36,7 +36,7 @@ public:
 		:Animal(name, age, leg_num),loyalty_ (loyalty) {
 		cout << "충성도 " << endl;
 	}
-	~Dog() {
+	virtual ~Dog() {
 		cout << "Dog 소멸자" << endl;
 	}
 	void bark() override { cout << "울프울프" << endl; }
@@ -47,6 +47,6 @@ private:
 };
 void main(void) {
 	Animal *animal = new Dog("마루", 5, 2, 100);
-	//정적 바인딩으로 Dog 소멸자는 호출이 안됨
+	
 	delete animal;
 }

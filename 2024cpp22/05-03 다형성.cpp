@@ -20,6 +20,9 @@ public:
 		cout << "다리 갯수 " << leg_num << endl;
 
 	}
+	~Animal() {
+		cout << "Animal 소멸자" << endl;
+	}
 
 private:
 	string name_;
@@ -33,7 +36,9 @@ public:
 		:Animal(name, age, leg_num),loyalty_ (loyalty) {
 		cout << "충성도 " << endl;
 	}
-	
+	~Dog() {
+		cout << "Dog 소멸자" << endl;
+	}
 	void bark() override { cout << "울프울프" << endl; }
 	void eat() override { cout << "왕" << endl; }
 	void walk() override { cout << "촵촵촵촵" << endl; }
@@ -41,17 +46,7 @@ private:
 	int loyalty_;
 };
 void main(void) {
-	Animal *animal = new Animal("요아조비", 8, 2);
-	animal->bark();
-	animal->walk();
-	animal->eat();
-
-	delete animal;
-
-	animal = new Dog("마루", 5, 2, 100);
-	animal->bark();
-	animal->eat();
-	animal->walk();
-
+	Animal *animal = new Dog("마루", 5, 2, 100);
+	//정적 바인딩으로 Dog 소멸자는 호출이 안됨
 	delete animal;
 }

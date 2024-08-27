@@ -4,15 +4,11 @@ using namespace std;
 
 class Animal {
 public:
-	virtual void walk(void) {
-		cout << "걷다" << endl;
-	}
-	virtual void bark(void) {
-		cout << "짖다" << endl;
-	}
-	virtual void eat(void) {
-		cout << "먹다" << endl;
-	}
+	//순수 가상함수(추상메서드)
+	virtual void walk(void) = 0;
+	virtual void bark(void) = 0;
+	virtual void eat(void) = 0;
+	
 	Animal(string name, unsigned int age, int leg_num)
 		: name_(name), age_(age), leg_num_(leg_num) {
 		cout << "이름 " << name << endl;
@@ -42,11 +38,16 @@ public:
 	void bark() override { cout << "울프울프" << endl; }
 	void eat() override { cout << "왕" << endl; }
 	void walk() override { cout << "촵촵촵촵" << endl; }
+	
 private:
 	int loyalty_;
 };
 void main(void) {
+	// 추상클래스는 객체를 생성할 수 없다. (new Animal() 불가)
 	Animal *animal = new Dog("마루", 5, 2, 100);
-	
+	animal->bark();
+	animal->eat();
+	animal->walk();
+
 	delete animal;
 }

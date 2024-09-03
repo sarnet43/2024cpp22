@@ -9,7 +9,7 @@ public:
 		: civil_(civil), force_(force), name_(name), territory_(territory) {
 
 	}
-	void show() {
+	virtual void show() {
 		cout << "국민 수 : " << civil_ << endl;
 		cout << "군력 : " << force_ << endl;
 		cout << "이름 :" <<name_ << endl;
@@ -31,6 +31,7 @@ public:
 	}
 
 	void show() {
+		Food::show();
 		cout << "마늘 : " << garic_ << endl;
 		cout << "고추 : " << pepper_ << endl;
 	}
@@ -47,6 +48,7 @@ public:
 
 	}
 	void show() {
+		Food::show();
 		cout << "젤라틴 : " << gelatin_ << endl;
 		cout << "설탕 : " << sugar_ << endl;
 	}
@@ -63,6 +65,7 @@ public:
 
 	}
 	void show() {
+		Food::show();
 		cout << "우유 : " << milk_ << endl;
 		cout << "응고제 : " << rennet_ << endl;
 	}

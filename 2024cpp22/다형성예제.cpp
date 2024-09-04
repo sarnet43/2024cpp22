@@ -27,9 +27,8 @@ public:
 class Kimchi : public Food {
 public:
 	Kimchi(int civil, int force, string name, int territory, int garlic, int pepper) 
-		: Food(civil, force, name, territory), garic_(garlic), pepper_(pepper)
-		{
-
+		: Food(civil, force, name, territory), garic_(garlic), pepper_(pepper) {
+		ca_ = 0;
 	}
 
 	void show() {
@@ -38,11 +37,14 @@ public:
 		cout << "고추 : " << pepper_ << endl;
 	}
 	void attack(Food* target) override{
-		target->force_ -= this->force_ / 2;
+		ca_++;
+		if (ca_ % 3 == 0) target->force_ -= this->force_ * 2;
+		else target->force_ -= this->force_;
 	}
 
 	int garic_;
 	int pepper_; 
+	int ca_; //기본 공격 3타당 크리티컬 어택
 };
 
 class Jelly : public Food {

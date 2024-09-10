@@ -90,6 +90,7 @@ void main(void) {
 	Food* friends = new Cheese(100, 20, "짜게치", 100, 20, 100);
 
 	while (true) {
+		system("cls");
 		cout << "☆나★" << endl;
 		player->show();
 		cout << endl << endl;

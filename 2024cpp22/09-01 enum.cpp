@@ -20,7 +20,7 @@ int main(void) {
     case FoodStyle::JAPANESE:
         cout << "초밥, 타코야끼" << endl;
         break;
-    case FoodStyle::CHINESE:
+    case CHINESE:
         cout << "동파육, 마라탕후루" << endl;
         break;
     default:

@@ -13,7 +13,6 @@ public:
     static int get_num(void) { return num_; }
     string get_name(void) { return name_; }
 private:
-    static string teacher_; //담임
     static int num_;
     string name_;
 };

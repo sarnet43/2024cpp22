@@ -1,9 +1,18 @@
 ﻿#include <SFML/Graphics.hpp>
+
 using namespace sf;
 using namespace std;
+
+enum App {
+	WIDTH = 1200,
+	HEIGHT = 700
+};
+
+
 void main(void)
 {
-	RenderWindow window(VideoMode(1200, 700), "shootingG");
+	RenderWindow window(VideoMode(App::WIDTH, App::HEIGHT), "shootingG");
+
 	while (window.isOpen()) {
 		Event event;
 		while (window.pollEvent(event))
@@ -16,8 +25,20 @@ void main(void)
 		player.setSize(Vector2f(181.f, 75.f));
 		player.setFillColor(Color::Magenta);
 		player.setPosition(500.f, 400.f);
+		player.setPosition((App::WIDTH - player.getSize().x) / 2.f, 600.f);
+		// TODO : 제대로 이동하도록 고치기
+		if (Keyboard::isKeyPressed(Keyboard::Left))
+			player.move(-10, 0);
+		if (Keyboard::isKeyPressed(Keyboard::Right))
+			player.move(10, 0);
+		if (Keyboard::isKeyPressed(Keyboard::Up))
+			player.move(0, -10);
+		if (Keyboard::isKeyPressed(Keyboard::Down))
+			player.move(0, 10);
+
+
 		window.clear();
 		window.draw(player);
 		window.display();
+
 	}
-}

@@ -11,12 +11,13 @@ enum App {
 
 void main(void) {
 	RenderWindow window(VideoMode(App::WIDTH, App::HEIGHT), "shootingG");
+	window.setFramerateLimit(60);
 
-		RectangleShape player;
-		player.setSize(Vector2f(181.f, 75.f));
-		player.setFillColor(Color::Magenta);
-		player.setPosition(500.f, 400.f);
-		player.setPosition((App::WIDTH - player.getSize().x) / 2.f, 600.f);
+	RectangleShape player;
+	player.setSize(Vector2f(181.f, 75.f));
+	player.setFillColor(Color::Magenta);
+	player.setPosition(500.f, 400.f);
+	player.setPosition((App::WIDTH - player.getSize().x) / 2.f, 600.f);
 	while (window.isOpen()) {
 		Event event;
 		while (window.pollEvent(event))
